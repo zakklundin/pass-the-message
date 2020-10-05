@@ -1,6 +1,16 @@
-function getInput() {
-    let userInput = document.getElementById("rutan").value
-    document.getElementById("svaret").innerHTML = userInput
+const userInput = document.getElementById("rutan")
+const outputen = document.getElementById("svaret")
+
+userInput.addEventListener("keyup", getInput)
+
+function getInput(event) {
+const text = event.target.value
+
+const result = manipulation(text)
+
+outputen.innerText = result
 }
 
-document.getElementById("knappen").onclick = getInput
+function manipulation(str) {
+    return str + str
+}
